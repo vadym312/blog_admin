@@ -37,7 +37,7 @@ export function PostCard({ post, onEdit, onDelete }: PostCardProps) {
           <div className="relative h-48 mb-4 rounded-md overflow-hidden">
             <Image
               src={post.image}
-              alt={post.imageAlt}
+              alt={post.imageAlt ?? ''}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -36,6 +36,9 @@ export async function POST(request: Request) {
     const post = await createPost({
       ...body,
       image: body.image || null,
+      imageAlt: body.imageAlt ?? null,
+      metaTitle: body.metaTitle ?? null,
+      metaDescription: body.metaDescription ?? null,
       authorId: session.user.id,
     });
 

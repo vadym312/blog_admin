@@ -18,7 +18,7 @@ export const postSchema = z.object({
   imageAlt: z.string().optional(),
   metaTitle: z.string().optional(),
   metaDescription: z.string().optional(),
-  category: z.enum(["INJECTIONS", "TREATMENTS", "INNOVATIONS", "CARE", "EDUCATION"]),
+  category: z.enum(["INJECTIONS", "TRAITEMENTS_DE_LA_PEAU", "RAJEUNISSEMENT_ANTI_AGE", "AVANT_APRES_TEMOIGNAGES", "CONSEILS_EDUCATION", "ACTUALITES_INNOVATIONS", "PHILOSOPHIE_BIEN_ETRE"]),
   published: z.boolean(),
 });
 
