@@ -15,11 +15,13 @@ interface PostCardProps {
 export function PostCard({ post, onEdit, onDelete }: PostCardProps) {
   const getCategoryColor = (category: string) => {
     const colors = {
-      INNOVATIONS: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
-      TREATMENTS: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
-      WELL_BEING: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
-      CARE: 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200',
-      EDUCATION: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
+      INJECTIONS: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
+      TRAITEMENTS_DE_LA_PEAU: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
+      RAJEUNISSEMENT_ANTI_AGE: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
+      AVANT_APRES_TEMOIGNAGES: 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200',
+      CONSEILS_EDUCATION: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
+      ACTUALITES_INNOVATIONS: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
+      PHILOSOPHIE_BIEN_ETRE: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200',
     };
     return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200';
   };
@@ -35,7 +37,7 @@ export function PostCard({ post, onEdit, onDelete }: PostCardProps) {
           <div className="relative h-48 mb-4 rounded-md overflow-hidden">
             <Image
               src={post.image}
-              alt={post.title}
+              alt={post.imageAlt}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

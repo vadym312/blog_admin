@@ -35,7 +35,10 @@ export default function PostForm() {
     title: string;
     excerpt: string;
     content: string;
+    imageAlt: string;
     image: string | undefined;
+    metaTitle: string;
+    metaDescription: string;
     category: Category;
     published: boolean;
   };
@@ -53,8 +56,11 @@ export default function PostForm() {
       title: "",
       excerpt: "",
       content: "",
+      imageAlt: "",
+      metaTitle: "",
+      metaDescription: "",
       image: undefined,
-      category: "WELL_BEING" as Category,
+      category: "INJECTIONS" as Category,
       published: false,
     },
   });
@@ -177,6 +183,16 @@ export default function PostForm() {
         </div>
 
         <div className="space-y-4">
+          <Label htmlFor="imageAlt">Image Alt Text</Label>
+          <Input
+            id="imageAlt"
+            {...register("imageAlt")}
+            placeholder="Enter image alt text"
+            className="w-full"
+          />
+        </div>
+
+        <div className="space-y-4">
           <Label>Featured Image</Label>
           <ImageUpload onUploadComplete={(url) => setValue("image", url)} />
         </div>
@@ -228,6 +244,26 @@ export default function PostForm() {
           </Button>
         </div> */}
 
+        <div className="space-y-4">
+          <Label htmlFor="metaTitle">Meta Title</Label>
+          <Input
+            id="metaTitle"
+            {...register("metaTitle")}
+            placeholder="Enter meta title"
+            className="w-full"
+          />
+        </div>
+
+        <div className="space-y-4">
+          <Label htmlFor="metaDescription">Meta Description</Label>
+          <Textarea
+            id="metaDescription"
+            {...register("metaDescription")}
+            placeholder="Enter meta description"
+            className="w-full h-24 resize-none"
+          />
+        </div>
+
         <div className="flex items-center space-x-2">
           <Switch
             id="published"
@@ -249,10 +285,12 @@ export default function PostForm() {
           </Button>
           <Button
             type="submit"
-            className={`bg-indigo-600 hover:bg-indigo-700 text-white ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+            className={`bg-indigo-600 hover:bg-indigo-700 text-white ${
+              loading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
             disabled={loading}
           >
-            {loading ? "Loading..." : (isEditing ? "Update Post" : "Create Post")}
+            {loading ? "Loading..." : isEditing ? "Update Post" : "Create Post"}
           </Button>
         </div>
       </form>

@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     const post = await createPost({
       ...body,
       image: body.image || null,
-      authorId: "cm4x3a3810000jthj0rftxt94",
+      authorId: session.user.id,
     });
 
     return NextResponse.json(post);

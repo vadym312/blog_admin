@@ -62,7 +62,7 @@ export function PostDialog({
       title: "",
       content: "",
       image: undefined,
-      category: "WELL_BEING" as Category,
+      category: "INJECTIONS" as Category,
       published: false,
     },
   });
@@ -80,7 +80,7 @@ export function PostDialog({
               title: "",
               content: "",
               image: undefined,
-              category: "WELL_BEING" as Category,
+              category: "INJECTIONS" as Category,
               published: false,
             }
       );
