@@ -35,7 +35,7 @@ export const authOptions: NextAuthOptions = {
     signIn: '/login',
   },
   session: {
-    strategy: 'jwt',
+    strategy: 'database',
     maxAge: 24 * 60 * 60, // 24 hours
   },
   callbacks: {
@@ -54,6 +54,7 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
   },
+  secret: process.env.NEXTAUTH_SECRET
 };
 
 const handler = NextAuth(authOptions);
